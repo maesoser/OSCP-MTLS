@@ -113,12 +113,6 @@ export class MTLSValidator {
     return certstatus.status;
   }
 
-  async isRevoked(clientCertificate){
-    const status = await this.getCertificateStatus(clientCertificate);
-    console.log(status);
-    if (status === 1) return true;
-    return false;
-  }
 }
 
 export default {
@@ -135,8 +129,8 @@ export default {
       }
       
       /* Simpler version - Blocks revoked certs
-      let isRevoked = await mTLSValidator.IsRevoked(b64ClientCert);
-      if (isRevoked === true){
+      const status = await mTLSValidator.getCertificateStatus(b64ClientCert);
+      if (status === 1){
         return new Response({ error: "cert_revoked" }, { status:400 })
       }
       */
