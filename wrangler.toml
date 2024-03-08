@@ -1,10 +1,10 @@
 name = "mtls-ocsp"
-main = "src/index.js"
+main = "index.js"
 compatibility_date = "2023-11-12"
 
 workers_dev = false
-routes = [{ pattern = "mtls-fw.${DOMAIN}/ocsp", zone_name = "${DOMAIN}" },
-{ pattern = "mtls.${DOMAIN}/ocsp", zone_name = "${DOMAIN}", }
+routes = [
+  { pattern = "mtls-fw.${DOMAIN}/ocsp", zone_name = "${DOMAIN}" },
 ]
 
 [vars]
